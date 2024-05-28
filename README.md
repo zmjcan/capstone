@@ -25,21 +25,16 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 
 -   As a user, I want to be able to browse and find general info on latest lost pets in my city / around my location
     
--   As a user, I want to be able to post live pet info by assistance of a live map pinning
+-   As a user, I want to be able to post possible lost pet info by assistance of a live map pinning
     
 -   As a user, I want to be able to share info about my pets and stories about finding my pets
-    
--   As a user, I want to be able to build a network of nearby pet owners
     
 -   As a user, I want to be able to login to my account to manage my tracked pets
     
 -   As a logged in user, I want to be able to access user submitted info through validation process
         
--   As a logged in user, I want to be able to see my tracked pets
+-   As a logged in user, I want to be able to see my tracked pets info
     
--   As a logged in user, I want to be able to track my pets by location
-
--   As a logged in user, I want to be able to donate AirTags to help people finding their lost pets
 
 
 ## Implementation
@@ -76,13 +71,15 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 
 	- express
 
+	- bcrypt
+
   
 
 ### APIs
 
   
 
-- No external APIs will be used for the first sprint
+- External API will be used for the first sprint to generate live map
 
 - RESTful API will be created throughout the sprints
 
