@@ -114,6 +114,8 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 
 ### Mockups
 
+<div class="flex-container" element: style="width: 1280; display: flex; flex-direction: row; flex-wrap:wrap;">
+
 <img src="./src/assets/mockups/mobile-1.png" alt="home page mockup" width="393"/>
 <img src="./src/assets/mockups/mobile-2.png" alt="dashboard page mockup" width="393"/>
 <img src="./src/assets/mockups/mobile-3.png" alt="live map page mockup" width="393"/>
@@ -124,4 +126,6 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 <img src="./src/assets/mockups/mobile-8.png" alt="user profile page mockup" width="393"/>
 <img src="./src/assets/mockups/mobile-9.png" alt="user register page mockup" width="393"/>
 <img src="./src/assets/mockups/mobile-10.png" alt="user login page mockup" width="393"/>
+
+</div>
 
