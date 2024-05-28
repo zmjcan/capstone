@@ -1,12 +1,15 @@
 # Capstone Proposal
+
 ### Author: Maggie Mengjiao Zhang
 
 ## Overview
 
 ### Statement
+
 **TailFinder** is an exciting new platform that helps reunite lost pets with their families. Let's bring those furry friends back where they belong!
 
 ### Problem
+
 Losing a pet is a distressing experience. Pets cannot communicate their location, and microchips do not provide real-time tracking. Access to microchip data is restricted to shelters and authorized personnel, leaving pet owners anxious and powerless.
 
 With **TailFinder**, we make finding lost pets easier through social posting and map pinning features. Imagine the relief and joy of reuniting with a lost pet. **TailFinder** is here to help make that happen, turning tearful moments into happy reunions!
@@ -15,35 +18,24 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 
 - Pet lovers who:
 
-	- have recently lost their pets
+  - have recently lost their pets
 
-	- are happy to help searching for pets through community posting
+  - are happy to help searching for pets through community posting
 
-	- want to keep track of their pets early
+  - want to keep track of their pets early
 
 ### Features
 
--   As a user, I want to be able to browse and find general info on latest lost pets in my city / around my location
-    
--   As a user, I want to be able to post possible lost pet info by assistance of a live map pinning
-    
--   As a user, I want to be able to share info about my pets and stories about finding my pets
-    
--   As a user, I want to be able to login to my account to manage my tracked pets
-    
--   As a logged in user, I want to be able to access user submitted info through validation process
-        
--   As a logged in user, I want to be able to see my tracked pets info
-    
-
+- As a user, I want to be able to browse and find general info on latest lost pets in my city / around my location
+- As a user, I want to be able to post possible lost pet info by assistance of a live map pinning
+- As a user, I want to be able to share info about my pets and stories about finding my pets
+- As a user, I want to be able to login to my account to manage my tracked pets
+- As a logged in user, I want to be able to access user submitted info through validation process
+- As a logged in user, I want to be able to see my tracked pets info
 
 ## Implementation
 
-  
-
 ### Tech Stack
-
-  
 
 - React
 
@@ -55,39 +47,29 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 
 - Node
 
-
 - Client libraries:
 
-	- react
+  - react
 
-	- react-router
+  - react-router
 
-	- axios
-
+  - axios
 
 - Server libraries:
 
-	- knex
+  - knex
 
-	- express
+  - express
 
-	- bcrypt
-
-  
+  - bcrypt
 
 ### APIs
-
-  
 
 - External API will be used for the first sprint to generate live map
 
 - RESTful API will be created throughout the sprints
 
-  
-
 ### Sitemap
-
-  
 
 - Home page
 
@@ -107,11 +89,13 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 
 - Access Pet Info through Form Validation
 
-  
-
 ### Mockups
 
-<div class="flex-container" element: style="width: 1280; display: flex; flex-direction: row; flex-wrap:wrap; gap:20;">
+<img src="./src/assets/mockups/desktop-1.png" alt="home page mockup" width="500"/>
+
+<img src="./src/assets/mockups/desktop-2.png" alt="home page mockup" width="500"/>
+
+<div class="flex-container" element: style="display: flex; flex-direction: row; flex-wrap:wrap; gap:20;">
 
 <img src="./src/assets/mockups/mobile-1.png" alt="home page mockup" width="393"/>
 <img src="./src/assets/mockups/mobile-2.png" alt="dashboard page mockup" width="393"/>
@@ -125,4 +109,3 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 <img src="./src/assets/mockups/mobile-10.png" alt="user login page mockup" width="393"/>
 
 </div>
-
