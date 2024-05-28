@@ -1,5 +1,5 @@
 # Capstone Proposal
-### Author: Mengjiao Zhang
+### Author: Maggie Mengjiao Zhang
 
 ## Overview
 
