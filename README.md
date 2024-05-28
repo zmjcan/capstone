@@ -114,7 +114,7 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 
 ### Mockups
 
-<div class="flex-container" element: style="width: 1280; display: flex; flex-direction: row; flex-wrap:wrap;">
+<div class="flex-container" element: style="width: 1280; display: flex; flex-direction: row; flex-wrap:wrap; gap:20;">
 
 <img src="./src/assets/mockups/mobile-1.png" alt="home page mockup" width="393"/>
 <img src="./src/assets/mockups/mobile-2.png" alt="dashboard page mockup" width="393"/>
