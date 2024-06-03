@@ -1,0 +1,10 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.main {
+  &__title {
+    color: $text-light;
+  }
+}
