@@ -1,0 +1,75 @@
+@use "./styles/partials/typography" as *;
+@use "./styles/partials/colors" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+
+*,
+*::before,
+*::after,
+*:visited {
+  box-sizing: border-box;
+  font-family: "Futura PT", "Tiempos Header", Verdana, sans-serif;
+}
+
+a {
+  color: #32302f;
+  text-decoration: none;
+
+  &:hover,
+  :before,
+  :after,
+  :visited {
+    text-decoration: none;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fcfcfc;
+  font-weight:400;
+
+  h1 {
+    font-size: $m-h1-size;
+    line-height: $m-h1-line-height;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: $h1-size;
+      line-height: $h1-line-height;
+    }
+  }
+
+  h2 {
+    font-size: $m-h2-size;
+    line-height: $m-h2-line-height;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: $h2-size;
+      line-height: $h2-line-height;
+    }
+  }
+
+  h3 {
+    font-size: $m-h3-size;
+    line-height: $m-h3-line-height;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: $h3-size;
+      line-height: $h3-line-height;
+    }
+  }
+
+  h4 {
+    font-size: $m-h4-size;
+    line-height: $m-h4-line-height;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: $h4-size;
+      line-height: $h4-line-height;
+    }
+  }
+}

@@ -1,12 +1,17 @@
-import './App.scss'
+import React from "react";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import "./App.scss";
 
 function App() {
-
   return (
-    <>
-     <h2>TailFinder</h2>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<div>TailFinder</div>} />
+        <Route path="/pets" element="" />
+        <Route path="/pets/:petId" element="" />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
