@@ -1,17 +1,18 @@
 import "./Header.scss";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
     <>
       <section className="header">
         <nav className="nav">
-          <div className="nav__title">Home</div>
-          <div className="nav__title">Dashboard</div>
-          <div className="nav__toggle">
+          <Link to="/" className="nav__title">Home</Link>
+          <Link to="/user/:userId" className="nav__title">Dashboard</Link>
+          <Link to="map" className="nav__toggle">
             <div className="nav__title">Explore Our Live Map!</div>
-          </div>
-          <div className="nav__title">Community Board</div>
-          <div className="nav__title">Login/Profile</div>
+          </Link>
+          <Link to="community" className="nav__title">Community Board</Link>
+          <Link to="/user" className="nav__title">Login/Profile</Link>
         </nav>
         <div className="quote-container">
           <section className="quote">

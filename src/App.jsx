@@ -4,17 +4,18 @@ import "./App.scss";
 import CpsLayout from "./layout/CpsLayout";
 import MainPage from "./pages/MainPage/MainPage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import CommunityPage from "./pages/CommunityPage/CommunityPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<CpsLayout/>}>
+        <Route path="/" element={<CpsLayout />}>
           <Route index element={<MainPage />} />
           <Route path="*" element={<PageNotFound />} />
+          <Route path="community" element={<CommunityPage />} />
+          {/* <Route path="/pets/:petId" element="" /> */}
         </Route>
-        {/* <Route path="/pets" element="" />
-        <Route path="/pets/:petId" element="" /> */}
       </Routes>
     </BrowserRouter>
   );

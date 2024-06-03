@@ -1,0 +1,12 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.stats-group{
+    display:flex;
+    flex-direction: column;
+    @include tablet{
+      flex-direction:row;
+    }
+}
