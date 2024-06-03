@@ -1,0 +1,31 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.notfound{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    &__title{
+        color: $maintext-color;
+        font-size:2rem;
+        font-weight:600;
+    }
+
+    &__button{
+        color: $cta-color;
+        background-color:$background-light;
+        font-size:2rem;
+        width:100%;
+        height:4rem;
+        border-radius:0.5rem;
+        border:1px solid $cta-color;
+        &:hover{
+            color:$text-light;
+            background-color: $background-dark;
+        }
+    }
+}

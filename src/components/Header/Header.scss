@@ -5,9 +5,9 @@
 
 .header {
   width: 100%;
-  background-color: $background-middle;
-  //   height: 14rem;
-  padding: 0.8rem 1rem 0 1rem;
+  background-color: $background-dark;
+  padding: 0.8rem 1rem 2rem 1rem;
+  border-radius: 1rem 1rem 0 0;
 
   @include tablet {
     padding: 2.8rem 4rem 0 2rem;
@@ -64,10 +64,14 @@
   color: $text-light;
 
   &__title {
-    width: 60%;
-    margin-left: 4rem;
-    &--light {
-      font-weight: 400;
+    display: none;
+    @include tablet {
+      display:flex;
+      width: 60%;
+      margin-left: 4rem;
+      &--light {
+        font-weight: 400;
+      }
     }
   }
 
@@ -78,13 +82,18 @@
     justify-content: center;
     align-items: center;
     @include tablet {
+      display:flex;
       flex-direction: row;
       justify-content: space-between;
     }
   }
 
   &__logo {
-    width: 12rem;
-    fill: white;
+    display: none;
+    @include tablet {
+      display:flex;
+      width: 12rem;
+      fill: white;
+    }
   }
 }
