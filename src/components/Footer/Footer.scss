@@ -4,26 +4,23 @@
 @use "../../styles/partials/mixins" as *;
 
 .footer {
-    margin-top:2rem;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: $background-middle;
-    border-radius: 1rem 1rem 0 0;
-    padding:0 2rem 0 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: $background-middle;
+  border-radius: 3rem 3rem 3rem 3rem;
+  padding: 0 2rem 0 2rem;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    // margin-top: 195rem;
+    padding: 0 4rem 0 4rem;
+  }
 
-
-    @include tablet{
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 195rem;
-        padding:0 4rem 0 4rem;
-    }
-
-    @include desktop{
-        margin-top: 110rem;
-
-    }
+  @include desktop {
+    // margin-top: 130rem;
+  }
 
   &__slogan {
     @include flex(flex-start, flex-start);

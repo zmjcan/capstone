@@ -39,6 +39,8 @@
 
     &__img{
         width:70%;
+        border-radius: 4rem;
+        margin-top:1rem;
         @include desktop{
         width:100%;
         margin:1rem 4rem 1rem 4rem;
