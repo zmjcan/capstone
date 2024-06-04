@@ -5,6 +5,9 @@ import CpsLayout from "./layout/CpsLayout";
 import MainPage from "./pages/MainPage/MainPage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import CommunityPage from "./pages/CommunityPage/CommunityPage";
+import MapPage from "./pages/MapPage/MapPage";
+// import PetMap from "./components/PetMap/PetMap";
+
 
 function App() {
   return (
@@ -14,6 +17,8 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="community" element={<CommunityPage />} />
+          <Route path="map" element={< MapPage/>} />
+
           {/* <Route path="/pets/:petId" element="" /> */}
         </Route>
       </Routes>

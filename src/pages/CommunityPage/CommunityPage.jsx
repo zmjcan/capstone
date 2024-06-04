@@ -1,6 +1,7 @@
 import "./CommunityPage.scss";
 import { Link } from "react-router-dom";
 import StatsGroup from "../../components/StatsGroup/StatsGroup";
+import Footer from "../../components/Footer/Footer";
 
 export default function CommunityPage() {
   return (
@@ -22,6 +23,7 @@ export default function CommunityPage() {
             <img className="community__img" src="../../src/assets/images/pets-11.png" alt="adorable pet image"/>
             <img className="community__img" src="../../src/assets/images/pets-12.png" alt="adorable pet image"/>
         </section>
+        <Footer/>
       </section>
     </>
   );

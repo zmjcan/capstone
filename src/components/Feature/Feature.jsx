@@ -23,7 +23,7 @@ export default function Feature() {
         </section>
         <section className="feature__card feature__card--reverse">
           <article className="feature__content">
-            When Tim's beloved Goldie puppy, Wasabi, went missing, a profound
+            When Tim's beloved puppy, Wasabi, went missing, a profound
             sadness settled over him. Hoping to find his little friend, Tim
             turned to TailFinder, a beacon of hope amidst his worry. He shared
             Wasabi's details and some of his favorite photos, hoping the
@@ -38,7 +38,7 @@ export default function Feature() {
           <h2 className="feature__title">Meet Wasabi:</h2>
           <img
             className="feature__img"
-            src="../../../src/assets/images/wasabi-main.png"
+            src="../../../src/assets/images/wasabi-main.jpg"
           />
         </section>
       </section>
