@@ -27,11 +27,14 @@
     flex-wrap: wrap;
   }
 
-  &__img {
+  &__img-container {
     width: 45%;
     margin: 2rem 2rem 0 0;
     @include desktop {
       width: 30%;
     }
+  }
+  &__img {
+    width: 100%
   }
 }
