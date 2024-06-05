@@ -98,7 +98,7 @@ export default function DetailsPage() {
             alt={onePet.pet_imgalt}
           />
         </article>
-        <h2 className="details__title">Last Seen Location (Map):</h2>
+        {/* <h2 className="details__title">Last Seen Location (Map):</h2> */}
         <div className="details__btn-container">
           <Link to={"/submit/" + onePet.id}>
             <Button buttonType="submit" buttonText="Submit Info" />

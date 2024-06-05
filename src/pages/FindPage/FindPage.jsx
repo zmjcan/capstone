@@ -1,5 +1,4 @@
 import "./FindPage.scss";
-import StatsGroup from "../../components/StatsGroup/StatsGroup";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
@@ -8,7 +7,6 @@ export default function FindPage() {
   return (
     <>
       <section className="find">
-        <StatsGroup />
         <h2 className="find__title">Find My Pet:</h2>
         <div className="find__container">
           <label htmlFor="petName" className="find__label">
