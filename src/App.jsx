@@ -11,7 +11,8 @@ import SubmitPage from "./pages/SubmitPage/SubmitPage";
 import FindPage from "./pages/FindPage/FindPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-
+import DashboardPage from "./pages/DashboardPage/DashboardPage";
+import DetailsPage from "./pages/DetailsPage/DetailsPage";
 
 function App() {
   return (
@@ -20,14 +21,14 @@ function App() {
         <Route path="/" element={<CpsLayout />}>
           <Route index element={<MainPage />} />
           <Route path="*" element={<PageNotFound />} />
+          <Route path="user/:userId" element={<DashboardPage />} />
           <Route path="community" element={<CommunityPage />} />
-          <Route path="map" element={< MapPage/>} />
-          <Route path="submit" element={< SubmitPage/>} />
-          <Route path="find" element={< FindPage/>} />
-          <Route path="user/login" element={< LoginPage/>}/>
-          <Route path="user/register" element={< RegisterPage/>}/>
-
-          {/* <Route path="/pets/:petId" element="" /> */}
+          <Route path="community/pets/:petId" element={<DetailsPage/>} />
+          <Route path="map" element={<MapPage />} />
+          <Route path="submit" element={<SubmitPage />} />
+          <Route path="find" element={<FindPage />} />
+          <Route path="user/login" element={<LoginPage />} />
+          <Route path="user/register" element={<RegisterPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

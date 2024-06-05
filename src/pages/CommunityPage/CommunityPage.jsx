@@ -10,18 +10,42 @@ export default function CommunityPage() {
         <StatsGroup />
         <section className="community__gallery">
             {/* need map here */}
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-01.png" alt="adorable pet image"/>
+            </Link>
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-02.png" alt="adorable pet image"/>
+            </Link>
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-03.png" alt="adorable pet image"/>
+            </Link>
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-04.png" alt="adorable pet image"/>
+            </Link>
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-05.png" alt="adorable pet image"/>
+            </Link>
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-06.png" alt="adorable pet image"/>
+            </Link>
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-07.png" alt="adorable pet image"/>
+            </Link>
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-08.png" alt="adorable pet image"/>
+            </Link>
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-09.png" alt="adorable pet image"/>
+            </Link>
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-10.png" alt="adorable pet image"/>
+            </Link>
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-11.png" alt="adorable pet image"/>
+            </Link>
+            <Link className="community__img-container" to="pets/:petId">
             <img className="community__img" src="../../src/assets/images/pets-12.png" alt="adorable pet image"/>
+            </Link>
         </section>
         <Footer/>
       </section>
