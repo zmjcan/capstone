@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import { useState } from "react";
 import "./App.scss";
 import CpsLayout from "./layout/CpsLayout";
 import MainPage from "./pages/MainPage/MainPage";
@@ -26,6 +25,7 @@ function App() {
           <Route path="community/pets/:petId" element={<DetailsPage/>} />
           <Route path="map" element={<MapPage />} />
           <Route path="submit" element={<SubmitPage />} />
+          <Route path="submit/:petId" element={<SubmitPage />} />
           <Route path="find" element={<FindPage />} />
           <Route path="user/login" element={<LoginPage />} />
           <Route path="user/register" element={<RegisterPage />} />

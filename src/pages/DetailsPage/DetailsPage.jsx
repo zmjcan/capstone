@@ -1,13 +1,35 @@
 import "./DetailsPage.scss";
+import { useParams, Link } from "react-router-dom";
+import { useState, useLayoutEffect } from "react";
+import axios from "axios";
 import Footer from "../../components/Footer/Footer";
 import Button from "../../components/Button/Button";
 
 export default function DetailsPage() {
+  const { petId } = useParams();
+  const [onePet, setOnePet] = useState(null);
+
+  useLayoutEffect(() => {
+    async function getOnePet() {
+      try {
+        const response = await axios.get(
+          import.meta.env.VITE_BASE_URL + "pets/" + petId
+        );
+        setOnePet(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    getOnePet();
+  }, []);
+
+  if (!onePet) return <h3>loading...</h3>;
+
   return (
     <>
       <section className="details">
         <h2 className="details__title">Tail Details:</h2>
-        <div className="details__form-container">
+        <article className="details__form-container">
           <form className="details__form">
             <div className="details__container">
               <label htmlFor="detailsName" className="details__label">
@@ -18,7 +40,7 @@ export default function DetailsPage() {
                 name="details_Name"
                 id="detailsName"
                 className="details__input"
-                placeholder="Pet Name"
+                placeholder={onePet.pet_name}
               />
             </div>
             <div className="details__container">
@@ -30,32 +52,58 @@ export default function DetailsPage() {
                 name="details_OwnerName"
                 id="detailsOwnerName"
                 className="details__input"
-                placeholder="Owner Name"
+                placeholder={onePet.owner_name}
               />
             </div>
             <div className="details__container">
-              <label htmlFor="detailsEmail" className="details__label">
+              <label htmlFor="detailsContact" className="details__label">
                 Owner Contact:
               </label>
               <input
                 type="text"
-                name="details_Email"
-                id="detailsEmail"
+                name="details_Contact"
+                id="detailsContact"
                 className="details__input"
-                placeholder="Update Your E-mail Address"
+                placeholder={onePet.owner_contact}
+              />
+            </div>
+            <div className="details__container">
+              <label htmlFor="detailsStory" className="details__label">
+                Description:
+              </label>
+              <input
+                type="text"
+                name="details_Story"
+                id="detailsStory"
+                className="details__input"
+                placeholder={onePet.pet_description}
+              />
+            </div>
+            <div className="details__container">
+              <label htmlFor="detailsStory" className="details__label">
+                Approx. Location:
+              </label>
+              <input
+                type="text"
+                name="details_Location"
+                id="detailsLocation"
+                className="details__input"
+                placeholder={onePet.pet_location}
               />
             </div>
           </form>
-          {/* need find here */}
-          {/* <div className="dashboard__gallery"> */}
-            <img
-              className="details__img"
-              src="../../src/assets/images/pets-01.png"
-              alt="adorable pet image"
-            />
-          </div>
-        {/* </div> */}
-        <h2 className="details__title">Last seem location</h2>
+          <img
+            className="details__img"
+            src={onePet.pet_image}
+            alt={onePet.pet_imgalt}
+          />
+        </article>
+        <h2 className="details__title">Last Seen Location (Map):</h2>
+        <div className="details__btn-container">
+          <Link to={"/submit/" + onePet.id}>
+            <Button buttonType="submit" buttonText="Submit Info" />
+          </Link>
+        </div>
         <Footer />
       </section>
     </>

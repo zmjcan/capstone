@@ -2,9 +2,36 @@ import "./SubmitPage.scss";
 import StatsGroup from "../../components/StatsGroup/StatsGroup";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useState, useLayoutEffect } from "react";
+import axios from "axios";
 
 export default function SubmitPage() {
+
+  const [onePet, setOnePet] = useState(null);
+
+
+  const { petId } = useParams();
+
+  console.log(petId);
+
+  useLayoutEffect(() => {
+    async function getOnePet() {
+      try {
+        const response = await axios.get(
+          import.meta.env.VITE_BASE_URL + "pets/" + petId
+        );
+        setOnePet(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    getOnePet();
+  }, []);
+
+  if ( !onePet)
+    return(<h3>loading...</h3>)
+
   return (
     <>
       <section className="submit">
@@ -19,7 +46,7 @@ export default function SubmitPage() {
             name="pet_Name"
             id="petName"
             className="submit__input"
-            placeholder="Enter Pet Name"
+            placeholder={onePet.pet_name}
           />
         </div>
         <div className="submit__container">
