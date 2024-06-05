@@ -1,53 +1,49 @@
 import "./CommunityPage.scss";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState, useLayoutEffect } from "react";
 import StatsGroup from "../../components/StatsGroup/StatsGroup";
 import Footer from "../../components/Footer/Footer";
 
+
 export default function CommunityPage() {
+  const [allPets, setAllPets] = useState(null);
+
+  useLayoutEffect(() => {
+    async function getAllPets() {
+      try {
+        const response = await axios.get(
+          import.meta.env.VITE_BASE_URL + "pets/"
+        );
+        setAllPets(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    getAllPets();
+  }, []);
+
+  // console.log(allPets); // 12 object array
+
+  if (!allPets) return <h3>loading...</h3>;
+
   return (
     <>
       <section className="community">
         <StatsGroup />
         <section className="community__gallery">
-            {/* need map here */}
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-01.png" alt="adorable pet image"/>
+          {/* need map here */}
+          {allPets.map((pet) => (
+            <Link key={pet.id} to={"pets/"+pet.id} className="community__img-container">
+              <img
+                className="community__img"
+                src={pet.pet_image}
+                alt={pet.pet_imgalt}
+              />
             </Link>
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-02.png" alt="adorable pet image"/>
-            </Link>
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-03.png" alt="adorable pet image"/>
-            </Link>
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-04.png" alt="adorable pet image"/>
-            </Link>
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-05.png" alt="adorable pet image"/>
-            </Link>
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-06.png" alt="adorable pet image"/>
-            </Link>
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-07.png" alt="adorable pet image"/>
-            </Link>
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-08.png" alt="adorable pet image"/>
-            </Link>
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-09.png" alt="adorable pet image"/>
-            </Link>
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-10.png" alt="adorable pet image"/>
-            </Link>
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-11.png" alt="adorable pet image"/>
-            </Link>
-            <Link className="community__img-container" to="pets/:petId">
-            <img className="community__img" src="../../src/assets/images/pets-12.png" alt="adorable pet image"/>
-            </Link>
+          ))}
         </section>
-        <Footer/>
+        <Footer />
       </section>
     </>
   );
