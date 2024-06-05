@@ -8,24 +8,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: $text-light;
+    padding:0 2rem 0 2rem;
+    border-radius: 1rem 1rem 0 0;
+    margin-top:-1rem;
     
     &__title{
         color: $maintext-color;
         font-size:2rem;
         font-weight:600;
-    }
-
-    &__button{
-        color: $cta-color;
-        background-color:$background-light;
-        font-size:2rem;
-        width:100%;
-        height:4rem;
-        border-radius:0.5rem;
-        border:1px solid $cta-color;
-        &:hover{
-            color:$text-light;
-            background-color: $background-dark;
-        }
     }
 }
