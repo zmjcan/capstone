@@ -1,0 +1,68 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+input::file-selector-button {
+  text-align: center;
+  font: 1rem "Futura PT", Arial;
+  font-weight: 600;
+  min-width: 6rem;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+  padding-top: 0.3rem;
+  border-radius: 2rem;
+  border: 1px solid $maintext-color;
+  background-color: $text-light;
+  color: $maintext-color;
+  font-size: $m-p1-size;
+  line-height: $m-p1-line-height;
+
+  @include tablet {
+    font-size: $p1-size;
+    line-height: $p1-line-height;
+  }
+
+  &:hover {
+    background-color: $cta-light;
+    color: $cta-color;
+    cursor: pointer;
+    border: none;
+    border: 1px solid $cta-color;
+    outline: 2px solid $cta-color;
+  }
+}
+
+.upload-img {
+  &__img {
+    border-radius: 2rem;
+  }
+
+  &__rm-btn {
+    text-align: center;
+    min-width: 6rem;
+    font: 1rem "Futura PT", Arial;
+    font-weight: 600;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding-top: 0.3rem;
+    border-radius: 2rem;
+    border: 1px solid $maintext-color;
+    background-color: $text-light;
+    color: $maintext-color;
+    font-size: $m-p1-size;
+    line-height: $m-p1-line-height;
+
+    @include tablet {
+      font-size: $p1-size;
+      line-height: $p1-line-height;
+    }
+
+    &:hover {
+      background-color: $cta-light;
+      color: $cta-color;
+      cursor: pointer;
+      border: none;
+      border: 1px solid $cta-color;
+      outline: 2px solid $cta-color;
+    }
+  }
+}

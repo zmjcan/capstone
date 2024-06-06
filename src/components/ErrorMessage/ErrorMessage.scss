@@ -1,0 +1,25 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.error {
+    &__msg {
+        font-size: $m-p3-size;
+        line-height: $m-p3-line-height;
+        display: flex;
+        color: red;
+        margin-top: 0.25rem;
+        font-weight: 400;
+
+        @include tablet {
+            font-size: $p3-size;
+            line-height: $p3-line-height;
+        }
+    }
+
+    &__icon {
+        width: 1rem;
+        margin-right: 0.25rem;
+    }
+}
