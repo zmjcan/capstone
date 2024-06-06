@@ -48,6 +48,7 @@
   }
 
   &__input {
+    color:$maintext-color;
     font-size: $m-p1-size;
     line-height: $m-p1-line-height;
     background-color: $background-light;
@@ -60,6 +61,10 @@
     @include tablet {
       font-size: $p1-size;
       line-height: $p1-line-height;
+    }
+
+    &:focus{
+      background-color: $focus-color;
     }
   }
 }

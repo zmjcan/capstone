@@ -31,6 +31,7 @@ export default function CommunityPage() {
     <>
       <section className="community">
         <StatsGroup />
+        <h2 className="community__title">Click on a tail to find out more!</h2>
         <section className="community__gallery">
           {/* need map here */}
           {allPets.map((pet) => (

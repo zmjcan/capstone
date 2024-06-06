@@ -1,8 +1,9 @@
 import "./MapPage.scss";
 import StatsGroup from "../../components/StatsGroup/StatsGroup";
-import PetMap from "../../components/PetMap/PetMap";
+// import PetMap from "../../components/PetMap/PetMap";
+import Map from "../../components/Map/Map";
 import Button from "../../components/Button/Button";
-// import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 
 export default function MapPage() {
@@ -19,8 +20,9 @@ export default function MapPage() {
           </Link>
         </div>
         <h2 className="map__title">Map Overview:</h2>
-        <PetMap />
-        {/* <Footer/> */}
+        {/* <PetMap /> */}
+        <Map popup_desc="<strong>We're looking for:</strong><p>12 furry friends in Toronto</p>" long="-79.383" lati="43.653" zoom="9"/>
+        <Footer/>
       </section>
     </>
   );

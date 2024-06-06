@@ -22,6 +22,10 @@
     height: 28rem;
   }
 
+  &__title{
+    color:$maintext-color;
+  }
+
   &__gallery {
     display: flex;
     flex-wrap: wrap;
@@ -34,7 +38,11 @@
       width: 30%;
     }
   }
+
   &__img {
-    width: 100%
+    width: 100%;
+    &:hover{
+      opacity:0.8;
+    }
   }
 }
