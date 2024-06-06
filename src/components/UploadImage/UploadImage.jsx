@@ -29,6 +29,7 @@ const UploadImage = ({formData, setFormData, imgsrc, setImgsrc}) => {
           console.log(event.target.files[0]); // Log the selected file
           setSelectedImage(event.target.files[0]);// Update the state with the selected file
           setImgsrc(URL.createObjectURL(event.target.files[0]));
+          formData.append("file", selectedImage);
 
           // setFormData((prevState) => ({
           //   ...prevState,
