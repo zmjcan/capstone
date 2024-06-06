@@ -12,17 +12,22 @@ export default function MapPage() {
       <section className="map">
         <StatsGroup />
         <div className="map__btn-container">
-          <Link to="/submit">
-            <Button buttonType="submit" buttonText="Submit Info" />
-          </Link>
           <Link to="/find">
             <Button buttonType="submit" buttonText="Find My Pet" />
+          </Link>
+          <Link to="/submit">
+            <Button buttonType="submit" buttonText="Submit Info" />
           </Link>
         </div>
         <h2 className="map__title">Map Overview:</h2>
         {/* <PetMap /> */}
-        <Map popup_desc="<strong>We're looking for:</strong><p>12 furry friends in Toronto</p>" long="-79.383" lati="43.653" zoom="9"/>
-        <Footer/>
+        <Map
+          popup_desc="<strong>We're looking for:</strong><p>12 furry friends in Toronto</p>"
+          long="-79.383"
+          lati="43.653"
+          zoom="9"
+        />
+        <Footer />
       </section>
     </>
   );

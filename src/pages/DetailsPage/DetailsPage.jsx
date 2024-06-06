@@ -6,6 +6,7 @@ import Footer from "../../components/Footer/Footer";
 import Button from "../../components/Button/Button";
 import Map from "../../components/Map/Map";
 
+
 export default function DetailsPage() {
   const { petId } = useParams();
   const [onePet, setOnePet] = useState(null);
@@ -47,6 +48,7 @@ export default function DetailsPage() {
                 id="detailsName"
                 className="details__input"
                 placeholder={onePet.pet_name}
+                disabled
               />
             </div>
             <div className="details__container">
@@ -59,6 +61,7 @@ export default function DetailsPage() {
                 id="detailsOwnerName"
                 className="details__input"
                 placeholder={onePet.owner_name}
+                disabled
               />
             </div>
             <div className="details__container">
@@ -71,6 +74,7 @@ export default function DetailsPage() {
                 id="detailsContact"
                 className="details__input"
                 placeholder={onePet.owner_contact}
+                disabled
               />
             </div>
             <div className="details__container">
@@ -83,6 +87,7 @@ export default function DetailsPage() {
                 id="detailsStory"
                 className="details__input"
                 placeholder={onePet.pet_description}
+                disabled
               />
             </div>
             <div className="details__container">
@@ -95,8 +100,22 @@ export default function DetailsPage() {
                 id="detailsLocation"
                 className="details__input"
                 placeholder={onePet.pet_location}
+                disabled
               />
             </div>
+            {onePet.finder_name && <div className="details__container">
+              <label htmlFor="finder_name" className="details__label">
+                Finder Name:
+              </label>
+              <input
+                type="text"
+                name="finder_name"
+                id="finder_name"
+                className="details__input"
+                placeholder={onePet.finder_name}
+                disabled
+              />
+            </div>}
           </form>
           <img
             className="details__img"
@@ -104,7 +123,7 @@ export default function DetailsPage() {
             alt={onePet.pet_imgalt}
           />
         </article>
-        <h2 className="details__title">Last Seen Location (Map):</h2>
+        <h2 className="details__title">Last Seen Location:</h2>
         <Map
           popup_desc={
             "<strong>We're looking for :</strong><p>" + onePet.pet_name + "</p>"
