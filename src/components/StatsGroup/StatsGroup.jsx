@@ -13,7 +13,7 @@ export default function StatsGroup() {
       />
       <Stats
         title="Tails we’re looking for:"
-        number="36"
+        number="12"
         info="Losing a pet is a distressing experience. Pets cannot communicate their location, and microchips do not provide real-time tracking and is not readily-accessible by owners.
       "
       />

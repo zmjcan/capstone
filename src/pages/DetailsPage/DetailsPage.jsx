@@ -4,10 +4,13 @@ import { useState, useLayoutEffect } from "react";
 import axios from "axios";
 import Footer from "../../components/Footer/Footer";
 import Button from "../../components/Button/Button";
+import Map from "../../components/Map/Map";
 
 export default function DetailsPage() {
   const { petId } = useParams();
   const [onePet, setOnePet] = useState(null);
+  // const [lng, setLng] = useState(-79.383);
+  // const [lat, setLat] = useState(43.653);
 
   useLayoutEffect(() => {
     async function getOnePet() {
@@ -16,12 +19,15 @@ export default function DetailsPage() {
           import.meta.env.VITE_BASE_URL + "pets/" + petId
         );
         setOnePet(response.data);
+        // setLng(response.data.long);
+        // setLat(response.data.lati);
       } catch (err) {
         console.error(err);
       }
     }
     getOnePet();
   }, []);
+
 
   if (!onePet) return <h3>loading...</h3>;
 
@@ -98,7 +104,15 @@ export default function DetailsPage() {
             alt={onePet.pet_imgalt}
           />
         </article>
-        {/* <h2 className="details__title">Last Seen Location (Map):</h2> */}
+        <h2 className="details__title">Last Seen Location (Map):</h2>
+        <Map
+          popup_desc={
+            "<strong>We're looking for :</strong><p>" + onePet.pet_name + "</p>"
+          }
+          long={onePet.long}
+          lati={onePet.lati}
+          zoom="13"
+        />
         <div className="details__btn-container">
           <Link to={"/submit/" + onePet.id}>
             <Button buttonType="submit" buttonText="Submit Info" />

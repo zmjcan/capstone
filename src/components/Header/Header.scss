@@ -8,6 +8,8 @@
   background-color: $background-dark;
   padding: 0.8rem 1rem 2rem 1rem;
   border-radius: 1rem 1rem 0 0;
+  animation-delay: 0.3s;
+
 
   @include tablet {
     padding: 2.8rem 4rem 0 2rem;
@@ -94,6 +96,9 @@
       display:flex;
       width: 12rem;
       fill: white;
+      &:hover{
+        transform: scale(1.05) rotate(10deg);
+      }
     }
   }
 }
