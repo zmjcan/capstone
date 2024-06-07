@@ -93,15 +93,15 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 
 <img src="./src/assets/mockups/desktop-1.png" alt="home page mockup" width="786"/>
 
-<img src="./src/assets/mockups/desktop-2.png" alt="community page mockup" width="786"/>
+<img src="./src/assets/mockups/Desktop-2.png" alt="community page mockup" width="786"/>
 
-<img src="./src/assets/mockups/desktop-3.png" alt="map page mockup" width="786"/>
+<img src="./src/assets/mockups/Desktop-3.png" alt="map page mockup" width="786"/>
 
-<img src="./src/assets/mockups/desktop-5.png" alt="find page mockup" width="786"/>
+<img src="./src/assets/mockups/Desktop-5.png" alt="find page mockup" width="786"/>
 
-<img src="./src/assets/mockups/desktop-7.png" alt="dashboard page mockup" width="786"/>
+<img src="./src/assets/mockups/Desktop-7.png" alt="dashboard page mockup" width="786"/>
 
-<img src="./src/assets/mockups/desktop-8.png" alt="tail detail page mockup" width="786"/>
+<img src="./src/assets/mockups/Desktop-8.png" alt="tail detail page mockup" width="786"/>
 
 
 <!-- <div class="flex-container" element: style="display: flex; flex-direction: row; flex-wrap:wrap; gap:20;">
