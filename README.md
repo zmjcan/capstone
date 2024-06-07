@@ -93,7 +93,7 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 
 <img src="./src/assets/mockups/desktop-1.png" alt="home page mockup" width="786"/>
 
-<img src="./src/assets/mockups/Desktop-2.png" alt="community page mockup" width="786"/>
+<img src="./src/assets/mockups/desktop-2.png" alt="community page mockup" width="786"/>
 
 <img src="./src/assets/mockups/Desktop-3.png" alt="map page mockup" width="786"/>
 
