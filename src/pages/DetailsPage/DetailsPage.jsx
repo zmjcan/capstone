@@ -119,7 +119,8 @@ export default function DetailsPage() {
           </form>
           <img
             className="details__img"
-            src={onePet.pet_image}
+            // src={onePet.pet_image}
+            src={`http://localhost:8080/${onePet.pet_image}`}
             alt={onePet.pet_imgalt}
           />
         </article>

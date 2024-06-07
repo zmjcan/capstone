@@ -7,9 +7,9 @@ import axios from "axios";
 import UploadImage from "../../components/UploadImage/UploadImage";
 
 export default function FindPage() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [errors, setErrors] = useState({});
-  const [imgsrc,setImgsrc]=useState(null)
+  const [image, setImage] = useState("");
   const [formData, setFormData] = useState({
     pet_name: "",
     pet_type: "",
@@ -17,17 +17,17 @@ export default function FindPage() {
     owner_contact: "",
     pet_location: "",
     pet_description: "",
-    // pet_image: "",
-    pet_imgalt: "user uploaded image",
-    long:null,
-    lati:null,
+    pet_image: `http://localhost:8080/${image}`,
+    pet_imgalt: "user uploaded pet image",
+    long: null,
+    lati: null,
   });
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
-    console.log(name,value)
+    console.log(name, value);
 
     setFormData((prevState) => ({
       ...prevState,
@@ -40,9 +40,9 @@ export default function FindPage() {
         [name]: null,
       }));
     }
-  };
 
-  // const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._%+-]+\.[a-zA-Z]{2,}$/;
+    console.log(formData)
+  };
 
   const validateForm = () => {
     const validationErrors = {};
@@ -51,42 +51,21 @@ export default function FindPage() {
         validationErrors[key] = "This field is required.";
       }
     }
-
-    // if (!emailRegex.test(formData.contact_email)) {
-    //   validationErrors.contact_email = "Invalid email address.";
-    // }
-
-    // const letterRegex = /[a-zA-Z]/g;
-    // const onlyDigitsPhone = formData.contact_phone.trim().replace(/\D/g, "");
-
-    // if (letterRegex.test(formData.contact_phone)) {
-    //   validationErrors.contact_phone = "No letters allowed!";
-    // } else if (onlyDigitsPhone.length !== 11) {
-    //   validationErrors.contact_phone =
-    //     "Invalid phone number. Enter 11 digits in total - country code & area code required.";
-    // }
-
     return validationErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const validationErrors = validateForm();
-
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
     try {
+      console.log(formData)
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}pets/`,
         formData
       );
-      if (response.status === 200) {
+      if (response.status === 201) {
         alert("Data successfully saved!");
-        navigate("/");
+        navigate("/community");
       } else {
         throw new Error("Failed to post pet");
       }
@@ -94,7 +73,6 @@ export default function FindPage() {
       console.error("Error post pet:", error);
     }
   };
-
 
   return (
     <>
@@ -152,6 +130,19 @@ export default function FindPage() {
             onChange={handleChange}
           />
         </div>
+        <div className="find__container">
+          <label htmlFor="pet_description" className="find__label">
+            Pet Description:
+          </label>
+          <input
+            type="text"
+            name="pet_description" // correspond w onChange data
+            id="pet_description"
+            className="find__input"
+            placeholder="A short description of your pet"
+            onChange={handleChange}
+          />
+        </div>
         <section className="find__container">
           <label htmlFor="pinOnMap" className="find__label">
             Pin on Map:
@@ -160,38 +151,91 @@ export default function FindPage() {
             <Button buttonType="button" buttonText="Map" />
           </Link>
         </section>
-        <section className="find__container">
-          <label htmlFor="pet_type" className="find__label">
-            Pet type:
-          </label>
-          <div>
-            <input type="radio" id="cat" name="pet_type" value="cat" onChange={handleChange} />
-            <label htmlFor="cat">Cat</label>
-          </div>
-          <div>
-            <input type="radio" id="dog" name="pet_type" value="dog" onChange={handleChange}/>
-            <label htmlFor="dog">Dog</label>
-          </div>
-          <div>
-            <input type="radio" id="bird" name="pet_type" value="bird" onChange={handleChange}/>
-            <label htmlFor="bird">Bird</label>
-          </div>
-          <div>
-            <input type="radio" id="rabbit" name="pet_type" value="rabbit" onChange={handleChange}/>
-            <label htmlFor="rabbit">Rabbit</label>
-          </div>
-          <div>
-            <input type="radio" id="other" name="pet_type" value="other" onChange={handleChange}/>
-            <label htmlFor="other">Other</label>
-          </div>
-        </section>
+
         <div className="find__container">
           <label htmlFor="pet_image" className="find__label">
             Provide an image:
           </label>
           {/* upload image component here */}
-          <UploadImage formData={formData} setFormData={setFormData} imgsrc={imgsrc} setImgsrc={setImgsrc}/>
+          <UploadImage
+            // handleChange={handleChange}
+            formData={formData}
+            setFormData={setFormData}
+            image={image}
+            setImage={setImage}
+          />
         </div>
+
+        <div className="find__container">
+          <label htmlFor="pet_image" className="find__label">
+            Pet Image Name:
+          </label>
+          <input
+            type="text"
+            name="pet_image"
+            id="pet_image"
+            className="find__input"
+            placeholder={`type the following image name: ${image}`}
+            onChange={handleChange}
+          />
+        </div>
+
+        <section className="find__container">
+          <label htmlFor="pet_type" className="find__label">
+            Pet type:
+          </label>
+          <div>
+            <input
+              type="radio"
+              id="cat"
+              name="pet_type"
+              value="cat"
+              onChange={handleChange}
+            />
+            <label htmlFor="cat">Cat</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="dog"
+              name="pet_type"
+              value="dog"
+              onChange={handleChange}
+            />
+            <label htmlFor="dog">Dog</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="bird"
+              name="pet_type"
+              value="bird"
+              onChange={handleChange}
+            />
+            <label htmlFor="bird">Bird</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="rabbit"
+              name="pet_type"
+              value="rabbit"
+              onChange={handleChange}
+            />
+            <label htmlFor="rabbit">Rabbit</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="other"
+              name="pet_type"
+              value="other"
+              onChange={handleChange}
+            />
+            <label htmlFor="other">Other</label>
+          </div>
+        </section>
+
         <div className="find__container">
           <Button buttonType="reset" buttonText="Reset" />
           <Button buttonType="submit" buttonText="Submit" />
