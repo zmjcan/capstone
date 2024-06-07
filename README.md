@@ -91,7 +91,7 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 
 ### Mockups
 
-<img src="./src/assets/mockups/desktop-1.png" alt="home page mockup" width="786"/>
+<img src="./src/assets/mockups/Desktop-1.png" alt="home page mockup" width="786"/>
 
 <img src="./src/assets/mockups/Desktop-2.png" alt="community page mockup" width="786"/>
 
@@ -102,19 +102,3 @@ With **TailFinder**, we make finding lost pets easier through social posting and
 <img src="./src/assets/mockups/Desktop-7.png" alt="dashboard page mockup" width="786"/>
 
 <img src="./src/assets/mockups/Desktop-8.png" alt="tail detail page mockup" width="786"/>
-
-
-<!-- <div class="flex-container" element: style="display: flex; flex-direction: row; flex-wrap:wrap; gap:20;">
-
-<img src="./src/assets/mockups/mobile-1.png" alt="home page mockup" width="393"/>
-<img src="./src/assets/mockups/mobile-2.png" alt="dashboard page mockup" width="393"/>
-<img src="./src/assets/mockups/mobile-3.png" alt="live map page mockup" width="393"/>
-<img src="./src/assets/mockups/mobile-4.png" alt="zoomed in map page mockup" width="393"/>
-<img src="./src/assets/mockups/mobile-5.png" alt="submit info page mockup" width="393"/>
-<img src="./src/assets/mockups/mobile-6.png" alt="find my pet page mockup" width="393"/>
-<img src="./src/assets/mockups/mobile-7.png" alt="community board mockup" width="393"/>
-<img src="./src/assets/mockups/mobile-8.png" alt="user profile page mockup" width="393"/>
-<img src="./src/assets/mockups/mobile-9.png" alt="user register page mockup" width="393"/>
-<img src="./src/assets/mockups/mobile-10.png" alt="user login page mockup" width="393"/>
-
-</div> -->
