@@ -38,7 +38,7 @@ export default function CommunityPage() {
             <Link key={pet.id} to={"pets/"+pet.id} className="community__img-container">
               <img
                 className="community__img"
-                src={pet.pet_image}
+                src={`http://localhost:8080/${pet.pet_image}`}
                 alt={pet.pet_imgalt}
               />
             </Link>
