@@ -31,6 +31,7 @@
   }
 
   &__btn-container {
+    margin-top:2rem;
     width: 100%;
     @include flex(center, center);
     gap:2rem;

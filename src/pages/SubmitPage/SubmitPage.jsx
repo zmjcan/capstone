@@ -14,17 +14,9 @@ export default function SubmitPage() {
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     pet_name: "",
-    // pet_type: "",
-    // owner_name: "",
-    // owner_contact: "",
     pet_location: "",
-    // pet_description: "",
     finder_name: "",
     finder_contact: ""
-    // pet_image: "",
-    // pet_imgalt: "user uploaded pet image",
-    // long: null,
-    // lati: null,
   });
 
   const handleChange = (e) => {
@@ -44,8 +36,6 @@ export default function SubmitPage() {
     }
   };
 
-  // const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._%+-]+\.[a-zA-Z]{2,}$/;
-
   const validateForm = () => {
     const validationErrors = {};
     for (const key in formData) {
@@ -53,20 +43,6 @@ export default function SubmitPage() {
         validationErrors[key] = "This field is required.";
       }
     }
-
-    // if (!emailRegex.test(formData.contact_email)) {
-    //   validationErrors.contact_email = "Invalid email address.";
-    // }
-
-    // const letterRegex = /[a-zA-Z]/g;
-    // const onlyDigitsPhone = formData.contact_phone.trim().replace(/\D/g, "");
-
-    // if (letterRegex.test(formData.contact_phone)) {
-    //   validationErrors.contact_phone = "No letters allowed!";
-    // } else if (onlyDigitsPhone.length !== 11) {
-    //   validationErrors.contact_phone =
-    //     "Invalid phone number. Enter 11 digits in total - country code & area code required.";
-    // }
 
     return validationErrors;
   };
@@ -89,7 +65,7 @@ export default function SubmitPage() {
       );
       if (response.status === 200) {
         alert("Data successfully saved!");
-        navigate("/community");
+        navigate(`/community/pets/${onePet.id}`);
       } else {
         throw new Error("Failed to update pet info");
       }

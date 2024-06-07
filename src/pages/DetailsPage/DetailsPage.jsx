@@ -116,10 +116,23 @@ export default function DetailsPage() {
                 disabled
               />
             </div>}
+            {/* would be nice to conditionally show owner & finder contacts when loggedin  */}
+            {onePet.finder_contact && <div className="details__container">
+              <label htmlFor="finder_name" className="details__label">
+                Finder Contact:
+              </label>
+              <input
+                type="text"
+                name="finder_name"
+                id="finder_name"
+                className="details__input"
+                placeholder={onePet.finder_contact}
+                disabled
+              />
+            </div>}
           </form>
           <img
             className="details__img"
-            // src={onePet.pet_image}
             src={`http://localhost:8080/${onePet.pet_image}`}
             alt={onePet.pet_imgalt}
           />

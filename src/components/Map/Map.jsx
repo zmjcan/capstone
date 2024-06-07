@@ -67,7 +67,7 @@ const Map = ({ popup_desc, long, lati, zoom }) => {
         },
       });
 
-      // Create a popup, but don't add it to the map yet.
+      // declare a popup, but not added to map yet.
 
       const popup = new mapboxgl.Popup({
         closeButton: false,
@@ -83,16 +83,14 @@ const Map = ({ popup_desc, long, lati, zoom }) => {
         const description = e.features[0].properties.description;
         // console.log("popup here");
         // console.log(coordinates);
-        // Ensure that if the map is zoomed out such that multiple
-        // copies of the feature are visible, the popup appears
-        // over the copy being pointed to.
 
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
 
-        // Populate the popup and set its coordinates
+        // populate the popup and set its coordinates
         // based on the feature found.
+        // add popup to map
         popup.setLngLat(coordinates).setHTML(description).addTo(map.current);
       });
 

@@ -175,7 +175,7 @@ export default function FindPage() {
             name="pet_image"
             id="pet_image"
             className="find__input"
-            placeholder={`type the following image name: ${image}`}
+            placeholder={`Please type the following image name: ${image}`}
             onChange={handleChange}
           />
         </div>

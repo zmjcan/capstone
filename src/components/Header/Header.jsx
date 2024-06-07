@@ -17,7 +17,7 @@ export default function Header() {
               Dashboard
             </Link>
             <Link to="map" className="nav__toggle">
-              <div className="nav__title">Explore Our Live Map!</div>
+              <div className="nav__title">Explore our live map!</div>
             </Link>
             <Link to="community" className="nav__title">
               Community Board
@@ -44,7 +44,6 @@ export default function Header() {
         </section>
       </>
     );
-    
   else
     return (
       <>
@@ -53,14 +52,14 @@ export default function Header() {
             <Link to="/" className="nav__title">
               Home
             </Link>
-            <Link to="/user/:userId" className="nav__title">
-              Dashboard
-            </Link>
-            <Link to="map" className="nav__toggle">
-              <div className="nav__title">Explore Our Live Map!</div>
-            </Link>
             <Link to="community" className="nav__title">
               Community Board
+            </Link>
+            <Link to="map" className="nav__toggle">
+              <div className="nav__title">Explore our live map!</div>
+            </Link>
+            <Link to="/user/:userId" className="nav__title">
+              Dashboard
             </Link>
             <Link to="/user/register" className="nav__title">
               Login/Register
