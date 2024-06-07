@@ -1,7 +1,30 @@
 import "./StatsGroup.scss";
+import { useState, useLayoutEffect } from "react";
+import axios from "axios";
 import Stats from "../Stats/Stats";
 
+
 export default function StatsGroup() {
+
+  const [allPets, setAllPets] = useState(null);
+
+  useLayoutEffect(() => {
+    async function getAllPets() {
+      try {
+        const response = await axios.get(
+          import.meta.env.VITE_BASE_URL + "pets/"
+        );
+        setAllPets(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    getAllPets();
+  }, []);
+
+  // console.log(allPets); // 12 object array
+
+  if (!allPets) return <h3>loading...</h3>;
   return (
     <section className="stats-group">
       <Stats
@@ -13,7 +36,7 @@ export default function StatsGroup() {
       />
       <Stats
         title="Tails we’re looking for:"
-        number="12"
+        number={allPets.length}
         info="Losing a pet is a distressing experience. Pets cannot communicate their location, and microchips do not provide real-time tracking and is not readily-accessible by owners.
       "
       />
