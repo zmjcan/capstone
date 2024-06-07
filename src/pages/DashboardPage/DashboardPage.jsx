@@ -55,12 +55,12 @@ export default function DashboardPage() {
         <h2 className="dashboard__title">My Tracked Pets:</h2>
         <section className="dashboard__gallery">
             {/* need map here */}
-            <img className="dashboard__img" src="../../src/assets/images/pets-03.png" alt="adorable pet image"/>
-            <img className="dashboard__img" src="../../src/assets/images/pets-04.png" alt="adorable pet image"/>
-            <img className="dashboard__img" src="../../src/assets/images/pets-02.png" alt="adorable pet image"/>
-            <img className="dashboard__img" src="../../src/assets/images/pets-01.png" alt="adorable pet image"/>
-            <img className="dashboard__img" src="../../src/assets/images/pets-06.png" alt="adorable pet image"/>
-            <img className="dashboard__img" src="../../src/assets/images/pets-05.png" alt="adorable pet image"/>
+            <img className="dashboard__img" src="http://localhost:8080/pets-03.png" alt="adorable pet image"/>
+            <img className="dashboard__img" src="http://localhost:8080/pets-04.png" alt="adorable pet image"/>
+            <img className="dashboard__img" src="http://localhost:8080/pets-02.png" alt="adorable pet image"/>
+            <img className="dashboard__img" src="http://localhost:8080/pets-01.png" alt="adorable pet image"/>
+            <img className="dashboard__img" src="http://localhost:8080/pets-06.png" alt="adorable pet image"/>
+            <img className="dashboard__img" src="http://localhost:8080/pets-05.png" alt="adorable pet image"/>
             </section>
         <Footer/>
       </section>
