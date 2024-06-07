@@ -15,9 +15,9 @@ export default function MapPage() {
           <Link to="/find">
             <Button buttonType="submit" buttonText="Find My Pet" />
           </Link>
-          <Link to="/submit">
+          {/* <Link to="/submit">
             <Button buttonType="submit" buttonText="Submit Info" />
-          </Link>
+          </Link> */}
         </div>
         <h2 className="map__title">Map Overview:</h2>
         {/* <PetMap /> */}

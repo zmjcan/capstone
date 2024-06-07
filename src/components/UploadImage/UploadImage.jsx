@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./UploadImage.scss";
+import axios from "axios";
 
-const UploadImage = ({formData, setFormData, imgsrc, setImgsrc}) => {
+const UploadImage = ({setFormData}) => {
   const [selectedImage, setSelectedImage] = useState(null);
-  // const [imgsrc,setImgsrc]=useState(null)
+  const [imgsrc, setImgsrc] = useState(null);
+
 
   return (
     <div>
@@ -25,27 +27,34 @@ const UploadImage = ({formData, setFormData, imgsrc, setImgsrc}) => {
       <input
         type="file"
         name="myImage"
-        onChange={(event) => {
+        onChange={async (event) => {
           console.log(event.target.files[0]); // Log the selected file
-          setSelectedImage(event.target.files[0]);// Update the state with the selected file
+          setSelectedImage(event.target.files[0]);
           setImgsrc(URL.createObjectURL(event.target.files[0]));
+          let formData = new FormData();
+
           formData.append("file", selectedImage);
+
 
           // setFormData((prevState) => ({
           //   ...prevState,
-          //   [name]: value,
+          //   [pet_image]: imgsrc,
           // }));
-          const pet_image="pet_image"
-
-          setFormData((prevState) => ({
-            ...prevState,
-            [pet_image]: imgsrc,
-          }));
 
 
           // setFormData({...formData,pet_image:imgsrc})
-          console.log(imgsrc);
-          console.log(formData);
+          // console.log(imgsrc);
+          // console.log(formData);
+          try {
+            const response = await axios.post(
+              `${import.meta.env.VITE_BASE_URL}upload`,
+              formData
+            );
+            console.log(formData);
+            setImgsrc(response.data.url);
+          } catch (err) {
+            console.error(`Error uploading file: ${err}`);
+          }
         }}
       />
     </div>

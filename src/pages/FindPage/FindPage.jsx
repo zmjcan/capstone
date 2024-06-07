@@ -7,9 +7,9 @@ import axios from "axios";
 import UploadImage from "../../components/UploadImage/UploadImage";
 
 export default function FindPage() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [errors, setErrors] = useState({});
-  const [imgsrc,setImgsrc]=useState(null)
+  const [imgsrc, setImgsrc] = useState(null);
   const [formData, setFormData] = useState({
     pet_name: "",
     pet_type: "",
@@ -19,15 +19,15 @@ export default function FindPage() {
     pet_description: "",
     // pet_image: "",
     pet_imgalt: "user uploaded image",
-    long:null,
-    lati:null,
+    long: null,
+    lati: null,
   });
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
-    console.log(name,value)
+    console.log(name, value);
 
     setFormData((prevState) => ({
       ...prevState,
@@ -94,7 +94,6 @@ export default function FindPage() {
       console.error("Error post pet:", error);
     }
   };
-
 
   return (
     <>
@@ -165,23 +164,53 @@ export default function FindPage() {
             Pet type:
           </label>
           <div>
-            <input type="radio" id="cat" name="pet_type" value="cat" onChange={handleChange} />
+            <input
+              type="radio"
+              id="cat"
+              name="pet_type"
+              value="cat"
+              onChange={handleChange}
+            />
             <label htmlFor="cat">Cat</label>
           </div>
           <div>
-            <input type="radio" id="dog" name="pet_type" value="dog" onChange={handleChange}/>
+            <input
+              type="radio"
+              id="dog"
+              name="pet_type"
+              value="dog"
+              onChange={handleChange}
+            />
             <label htmlFor="dog">Dog</label>
           </div>
           <div>
-            <input type="radio" id="bird" name="pet_type" value="bird" onChange={handleChange}/>
+            <input
+              type="radio"
+              id="bird"
+              name="pet_type"
+              value="bird"
+              onChange={handleChange}
+            />
             <label htmlFor="bird">Bird</label>
           </div>
           <div>
-            <input type="radio" id="rabbit" name="pet_type" value="rabbit" onChange={handleChange}/>
+            <input
+              type="radio"
+              id="rabbit"
+              name="pet_type"
+              value="rabbit"
+              onChange={handleChange}
+            />
             <label htmlFor="rabbit">Rabbit</label>
           </div>
           <div>
-            <input type="radio" id="other" name="pet_type" value="other" onChange={handleChange}/>
+            <input
+              type="radio"
+              id="other"
+              name="pet_type"
+              value="other"
+              onChange={handleChange}
+            />
             <label htmlFor="other">Other</label>
           </div>
         </section>
@@ -190,7 +219,12 @@ export default function FindPage() {
             Provide an image:
           </label>
           {/* upload image component here */}
-          <UploadImage formData={formData} setFormData={setFormData} imgsrc={imgsrc} setImgsrc={setImgsrc}/>
+          <UploadImage
+            // formData={formData}
+            setFormData={setFormData}
+            // imgsrc={imgsrc}
+            // setImgsrc={setImgsrc}
+          />
         </div>
         <div className="find__container">
           <Button buttonType="reset" buttonText="Reset" />
