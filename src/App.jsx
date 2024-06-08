@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { useState } from "react";
 import "./App.scss";
 import CpsLayout from "./layout/CpsLayout";
 import MainPage from "./pages/MainPage/MainPage";
@@ -14,10 +15,13 @@ import DashboardPage from "./pages/DashboardPage/DashboardPage";
 import DetailsPage from "./pages/DetailsPage/DetailsPage";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<CpsLayout />}>
+        <Route path="/" element={<CpsLayout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isRegistered={isRegistered} setIsRegistered={setIsRegistered}/>}>
           <Route index element={<MainPage />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="user/:userId" element={<DashboardPage />} />
@@ -27,8 +31,8 @@ function App() {
           <Route path="submit" element={<SubmitPage />} />
           <Route path="submit/:petId" element={<SubmitPage />} />
           <Route path="find" element={<FindPage />} />
-          <Route path="user/login" element={<LoginPage />} />
-          <Route path="user/register" element={<RegisterPage />} />
+          <Route path="user/login" element={<LoginPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
+          <Route path="user/register" element={<RegisterPage isRegistered={isRegistered} setIsRegistered={setIsRegistered}/>} />
         </Route>
       </Routes>
     </BrowserRouter>

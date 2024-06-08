@@ -69,5 +69,6 @@
 
   &__btn-container{
     @include flex(center,center);
+    gap:2rem;
   }
 }
