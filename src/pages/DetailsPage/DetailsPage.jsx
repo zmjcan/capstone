@@ -7,7 +7,7 @@ import Button from "../../components/Button/Button";
 import Map from "../../components/Map/Map";
 
 
-export default function DetailsPage() {
+export default function DetailsPage({isLoggedIn}) {
   const { petId } = useParams();
   const [onePet, setOnePet] = useState(null);
   // const [lng, setLng] = useState(-79.383);
@@ -27,6 +27,7 @@ export default function DetailsPage() {
       }
     }
     getOnePet();
+    // console.log(isLoggedIn)
   }, []);
 
 
@@ -64,7 +65,7 @@ export default function DetailsPage() {
                 disabled
               />
             </div>
-            <div className="details__container">
+           {isLoggedIn &&( <div className="details__container">
               <label htmlFor="detailsContact" className="details__label">
                 Owner Contact:
               </label>
@@ -76,7 +77,7 @@ export default function DetailsPage() {
                 placeholder={onePet.owner_contact}
                 disabled
               />
-            </div>
+            </div>)}
             <div className="details__container">
               <label htmlFor="detailsStory" className="details__label">
                 Description:
@@ -116,8 +117,8 @@ export default function DetailsPage() {
                 disabled
               />
             </div>}
-            {/* would be nice to conditionally show owner & finder contacts when loggedin  */}
-            {onePet.finder_contact && <div className="details__container">
+            {/* conditionally show owner & finder contacts when loggedin  */}
+            {isLoggedIn &&(onePet.finder_contact && <div className="details__container">
               <label htmlFor="finder_name" className="details__label">
                 Finder Contact:
               </label>
@@ -129,7 +130,7 @@ export default function DetailsPage() {
                 placeholder={onePet.finder_contact}
                 disabled
               />
-            </div>}
+            </div>)}
           </form>
           <img
             className="details__img"

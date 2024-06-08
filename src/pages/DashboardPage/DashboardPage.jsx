@@ -1,13 +1,13 @@
 import "./DashboardPage.scss";
-import { Link, useNavigate, useParams} from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
+import Character from "../../components/Character/Character";
 
-export default function DashboardPage() {
-
-  const {userId} = useParams();
+export default function DashboardPage({setIsLoggedIn}) {
+  const { userId } = useParams();
   // console.log(userId)
 
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ export default function DashboardPage() {
     e.preventDefault();
 
     try {
-      console.log(formData)
+      console.log(formData);
       const response = await axios.patch(
         `http://localhost:8080/private/users/${userId}`,
         formData
@@ -73,6 +73,7 @@ export default function DashboardPage() {
 
   return (
     <>
+      <Character/>
       <section className="dashboard">
         <h2 className="dashboard__title">Profile:</h2>
         <form className="dashboard__form" onSubmit={handleSubmit}>
@@ -88,7 +89,6 @@ export default function DashboardPage() {
               placeholder="Update Your Name"
               onChange={handleChange}
             />
-            {/* <Button buttonType="submit" buttonText="Update" /> */}
           </div>
           <div className="dashboard__container">
             <label htmlFor="user_email" className="dashboard__label">
@@ -102,7 +102,6 @@ export default function DashboardPage() {
               placeholder="Update Your E-mail Address"
               onChange={handleChange}
             />
-            {/* <Button buttonType="submit" buttonText="Update" /> */}
           </div>
           <div className="dashboard__container">
             <label htmlFor="user_password" className="dashboard__label">
@@ -115,26 +114,49 @@ export default function DashboardPage() {
               className="dashboard__input"
               placeholder="Update Your Password"
               onChange={handleChange}
-
             />
-            {/* <Button buttonType="submit" buttonText="Update" /> */}
           </div>
           <div className="dashboard__btn-container">
             <Button buttonType="reset" buttonText="Reset" />
             <Button buttonType="submit" buttonText="Submit" />
           </div>
         </form>
+
         <h2 className="dashboard__title">My Tracked Pets:</h2>
         <section className="dashboard__gallery">
-            {/* need map here */}
-            <img className="dashboard__img" src="http://localhost:8080/pets-03.png" alt="adorable pet image"/>
-            <img className="dashboard__img" src="http://localhost:8080/pets-04.png" alt="adorable pet image"/>
-            <img className="dashboard__img" src="http://localhost:8080/pets-02.png" alt="adorable pet image"/>
-            <img className="dashboard__img" src="http://localhost:8080/pets-01.png" alt="adorable pet image"/>
-            <img className="dashboard__img" src="http://localhost:8080/pets-06.png" alt="adorable pet image"/>
-            <img className="dashboard__img" src="http://localhost:8080/pets-05.png" alt="adorable pet image"/>
-            </section>
-        <Footer/>
+          {/* need map here */}
+          <img
+            className="dashboard__img"
+            src="http://localhost:8080/pets-03.png"
+            alt="adorable pet image"
+          />
+          <img
+            className="dashboard__img"
+            src="http://localhost:8080/pets-04.png"
+            alt="adorable pet image"
+          />
+          <img
+            className="dashboard__img"
+            src="http://localhost:8080/pets-02.png"
+            alt="adorable pet image"
+          />
+          <img
+            className="dashboard__img"
+            src="http://localhost:8080/pets-01.png"
+            alt="adorable pet image"
+          />
+          <img
+            className="dashboard__img"
+            src="http://localhost:8080/pets-06.png"
+            alt="adorable pet image"
+          />
+          <img
+            className="dashboard__img"
+            src="http://localhost:8080/pets-05.png"
+            alt="adorable pet image"
+          />
+        </section>
+        <Footer />
       </section>
     </>
   );

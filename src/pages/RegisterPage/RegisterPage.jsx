@@ -5,6 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+// import Character from "../../components/Character/Character";
 
 export default function RegisterPage({ isRegistered, setIsRegistered }) {
   const navigate = useNavigate();
@@ -57,9 +58,11 @@ export default function RegisterPage({ isRegistered, setIsRegistered }) {
   }
 
   return (
-    <>
+    <>        
+    {/* <Character/> */}
       <section className="register">
         <StatsGroup />
+
         <h2 className="register__title">Register:</h2>
         <form className="register__form" onSubmit={submitRegister}>
           <div className="register__container">
