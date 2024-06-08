@@ -24,9 +24,9 @@ function App() {
         <Route path="/" element={<CpsLayout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isRegistered={isRegistered} setIsRegistered={setIsRegistered}/>}>
           <Route index element={<MainPage />} />
           <Route path="*" element={<PageNotFound />} />
-          <Route path="user/:userId" element={<DashboardPage />} />
+          <Route path="user/:userId" element={<DashboardPage setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="community" element={<CommunityPage />} />
-          <Route path="community/pets/:petId" element={<DetailsPage/>} />
+          <Route path="community/pets/:petId" element={<DetailsPage isLoggedIn={isLoggedIn}/>} />
           <Route path="map" element={<MapPage />} />
           <Route path="submit" element={<SubmitPage />} />
           <Route path="submit/:petId" element={<SubmitPage />} />
