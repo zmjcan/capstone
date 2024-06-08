@@ -1,51 +1,123 @@
 import "./DashboardPage.scss";
+import { Link, useNavigate, useParams} from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
 
 export default function DashboardPage() {
+
+  const {userId} = useParams();
+  // console.log(userId)
+
+  const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
+  const [image, setImage] = useState("");
+
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    user_password: "",
+  });
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    console.log(name, value);
+
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+
+    if (errors[name]) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: null,
+      }));
+    }
+
+    // console.log(formData)
+  };
+
+  const validateForm = () => {
+    const validationErrors = {};
+    for (const key in formData) {
+      if (!formData[key]) {
+        validationErrors[key] = "This field is required.";
+      }
+    }
+    return validationErrors;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      console.log(formData)
+      const response = await axios.patch(
+        `http://localhost:8080/private/users/${userId}`,
+        formData
+      );
+      if (response.status === 200) {
+        alert("Data successfully saved!");
+        // navigate("/community");
+      } else {
+        throw new Error("Failed to update pet");
+      }
+    } catch (error) {
+      console.error("Error updating user:", error);
+    }
+  };
+
   return (
     <>
       <section className="dashboard">
         <h2 className="dashboard__title">Profile:</h2>
-        <form className="dashboard__form">
+        <form className="dashboard__form" onSubmit={handleSubmit}>
           <div className="dashboard__container">
-            <label htmlFor="dashboardName" className="dashboard__label">
+            <label htmlFor="user_name" className="dashboard__label">
               Name:
             </label>
             <input
               type="text"
-              name="dashboard_Name"
-              id="dashboardName"
+              name="user_name"
+              id="user_name"
               className="dashboard__input"
               placeholder="Update Your Name"
+              onChange={handleChange}
             />
-            <Button buttonType="submit" buttonText="Update" />
+            {/* <Button buttonType="submit" buttonText="Update" /> */}
           </div>
           <div className="dashboard__container">
-            <label htmlFor="dashboardEmail" className="dashboard__label">
+            <label htmlFor="user_email" className="dashboard__label">
               Email:
             </label>
             <input
               type="text"
-              name="dashboard_Email"
-              id="dashboardEmail"
+              name="user_email"
+              id="user_email"
               className="dashboard__input"
               placeholder="Update Your E-mail Address"
+              onChange={handleChange}
             />
-            <Button buttonType="submit" buttonText="Update" />
+            {/* <Button buttonType="submit" buttonText="Update" /> */}
           </div>
           <div className="dashboard__container">
-            <label htmlFor="dashboardPw" className="dashboard__label">
-              Email:
+            <label htmlFor="user_password" className="dashboard__label">
+              Password:
             </label>
             <input
               type="password"
-              name="dashboard_Pw"
-              id="dashboardPw"
+              name="user_password" // key to sent data
+              id="user_password" //both need to be the same
               className="dashboard__input"
               placeholder="Update Your Password"
+              onChange={handleChange}
+
             />
-            <Button buttonType="submit" buttonText="Update" />
+            {/* <Button buttonType="submit" buttonText="Update" /> */}
           </div>
           <div className="dashboard__btn-container">
             <Button buttonType="reset" buttonText="Reset" />

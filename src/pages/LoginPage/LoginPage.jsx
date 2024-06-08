@@ -39,14 +39,16 @@ export default function LoginPage({isLoggedIn, setIsLoggedIn}) {
 
     try {
       console.log(formData)
-      const response = await axios.get(
-        `${import.meta.env.TF_PRIVATE_URL}users/`,
+      const response = await axios.post(
+        // `${import.meta.env.TF_PRIVATE_URL}users/login/`,
+        "http://localhost:8080/private/users/login",
         formData
       );
       if (response.status === 200) {
+        const userId = response.data.id
         alert("Successfully Logged-in!");
         setIsLoggedIn(true); // here we set a state that was in highest level (app level)
-        navigate("/user/:userId");
+        navigate(`/user/${userId}`);
       } else {
         throw new Error("Failed Login");
       }
