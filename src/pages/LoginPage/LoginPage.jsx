@@ -45,7 +45,7 @@ export default function LoginPage({isLoggedIn, setIsLoggedIn}) {
         formData
       );
       if (response.status === 200) {
-        const userId = response.data.id
+        const {token, userId} = response.data
         alert("Successfully Logged-in!");
         setIsLoggedIn(true); // here we set a state that was in highest level (app level)
         navigate(`/user/${userId}`);
