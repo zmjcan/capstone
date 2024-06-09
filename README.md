@@ -1,4 +1,4 @@
-# Capstone Proposal
+# Capstone Project - The TailFinder
 
 ### Author: Maggie Mengjiao Zhang
 
@@ -102,7 +102,7 @@ To use the repo:
   - Register and login components 
   - Access Contact Info through Validation
 
-- Future development:
+- Next Steps / Future development:
   - Add / browse Community Posts
 
 
