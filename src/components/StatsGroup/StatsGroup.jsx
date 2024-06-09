@@ -22,7 +22,7 @@ export default function StatsGroup() {
     getAllPets();
   }, []);
 
-  // console.log(allPets); // 12 object array
+  // console.log(allPets); // 12 object array initial
 
   if (!allPets) return <h3>loading...</h3>;
   return (
