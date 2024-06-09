@@ -99,7 +99,7 @@ export default function DashboardPage({setIsLoggedIn}) {
               name="user_email"
               id="user_email"
               className="dashboard__input"
-              placeholder="Update Your E-mail Address"
+              placeholder="Update your email"
               onChange={handleChange}
             />
           </div>
