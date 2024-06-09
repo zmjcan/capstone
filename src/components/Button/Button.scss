@@ -1,0 +1,35 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.button-blank {
+  margin-top:0.5rem;
+  margin-bottom:0.5rem;
+  font-weight:600;
+  width: 15rem;
+  height:4rem;
+  border-radius: 2rem;
+  border:1px solid $maintext-color;
+  background-color: $text-light;
+  color:$maintext-color;
+  font-size:$m-p1-size;
+  line-height: $m-p1-line-height;
+
+  @include tablet {
+    width: 31rem;
+    height: 4rem;
+    font-size:$p1-size;
+    line-height: $p1-line-height;
+  }
+
+  &:hover{
+    background-color: $cta-light;
+    color:$cta-color;
+    cursor:pointer;
+    border:none;
+    border:1px solid $cta-color;
+    outline:2px solid $cta-color;
+
+  }
+}

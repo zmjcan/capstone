@@ -1,0 +1,72 @@
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media screen and (min-width: 1280px) {
+      @content;
+    }
+  }
+  
+  @mixin flex($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+  @mixin flex-wrap() {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  @mixin CTA-button($color, $font-color, $border) {
+    background-color: $color;
+    color: $font-color;
+    @include labels-links-buttons;
+    height: 2.25rem;
+    width: 100%;
+    border: $border;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    @include flex(center, center);
+    @include tablet {
+      height: 2.375rem;
+      width: fit-content;
+      padding: 0 1rem;
+    }
+  }
+  
+  @mixin form-field {
+    height: 2.25rem;
+    width: 100%;
+    border: 1px solid $cloud;
+    border-radius: 1.25rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  
+    &::placeholder {
+      color: $cloud;
+    }
+  
+    &:focus {
+      outline: 1px solid $instock-indigo;
+    }
+  
+    @include tablet {
+      height: 2.375rem;
+      width: 12rem;
+      padding: 0 1rem;
+    }
+    @include desktop {
+      width: 17rem;
+    }
+  }
+  
+  @mixin font($size, $height, $weight) {
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+  }
+  

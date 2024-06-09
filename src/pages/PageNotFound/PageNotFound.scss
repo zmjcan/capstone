@@ -1,0 +1,21 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.notfound{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $text-light;
+    padding:0 2rem 0 2rem;
+    border-radius: 1rem 1rem 0 0;
+    margin-top:-1rem;
+    
+    &__title{
+        color: $maintext-color;
+        font-size:2rem;
+        font-weight:600;
+    }
+}

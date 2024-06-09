@@ -1,0 +1,47 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.stats {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 3rem;
+
+    &-key {
+      color: $maintext-color;
+    }
+
+    &-value {
+      width:4rem;
+      height:4rem;
+      text-align: center;
+      padding-top:0.7rem;
+      color: $cta-color;
+      background-image: url("../../assets/images/cta-circle.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__info {
+    color: $maintext-color;
+    background-color: $background-middle;
+    padding: 1rem;
+    margin-right: 3rem;
+    border-radius: 2rem;
+    font-size: $m-p1-size;
+    line-height: $m-p1-line-height;
+    font-weight: 400;
+
+    @include tablet {
+      font-size: $p1-size;
+      line-height: $p1-line-height;
+    }
+  }
+}
