@@ -147,9 +147,9 @@ export default function FindPage() {
           <label htmlFor="pinOnMap" className="find__label">
             Pin on Map:
           </label>
-          <Link to="/map">
+          {/* <Link to="/map"> */}
             <Button buttonType="button" buttonText="Map" />
-          </Link>
+          {/* </Link> */}
         </section>
 
         <div className="find__container">
